@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1D0606-C046-447E-B039-CA1F54614038}|org_technika\\org_technika.csproj|d:\\\u044F\u0433\u043A\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u043A\u043F \u043C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1D0606-C046-447E-B039-CA1F54614038}|org_technika\\org_technika.csproj|solutionrelative:org_technika\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1D0606-C046-447E-B039-CA1F54614038}|org_technika\\org_technika.csproj|D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EA1D0606-C046-447E-B039-CA1F54614038}|org_technika\\org_technika.csproj|solutionrelative:org_technika\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "org_technika\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\MainWindow.xaml.cs",
+              "RelativeToolTip": "org_technika\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T19:32:41.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "org_technika\\MainWindow.xaml",
+              "ToolTip": "D:\\\u042F\u0413\u041A\\4 \u041A\u0423\u0420\u0421\\\u041A\u0443\u0440\u0441\u043E\u0432\u043E\u0439 \u043F\u0440\u043E\u0435\u043A\u0442\\\u041A\u041F \u041C\u0435\u043B\u044C\u043D\u0438\u043A\u043E\u0432\\prilojenie\\org_technika\\org_technika\\MainWindow.xaml",
+              "RelativeToolTip": "org_technika\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-03T10:25:06.389Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

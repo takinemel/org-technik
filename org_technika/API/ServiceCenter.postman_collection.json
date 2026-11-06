@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Service Center API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:62236" },
+    { "key": "token", "value": "" },
+    { "key": "orderId", "value": "1" },
+    { "key": "clientId", "value": "1" },
+    { "key": "equipmentId", "value": "1" },
+    { "key": "masterId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login - admin",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"Login\": \"admin\",\n  \"Password\": \"замените-на-пароль\"\n}" },
+            "url": "{{baseUrl}}/api/auth/login"
+          },
+          "event": [{ "listen": "test", "script": { "exec": ["if (pm.response.code === 200) { pm.collectionVariables.set('token', pm.response.json().AccessToken); }"] } }]
+        },
+        {
+          "name": "Invalid login (401)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"Login\": \"unknown\",\n  \"Password\": \"wrong\"\n}" },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        { "name": "List orders", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/orders" } },
+        { "name": "Order details", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/orders/{{orderId}}" } },
+        { "name": "Invalid order id (400)", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/orders/0" } },
+        { "name": "Create order", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"OrderNumber\": \"TEST-001\",\n  \"ClientId\": {{clientId}},\n  \"EquipmentId\": {{equipmentId}},\n  \"MasterId\": {{masterId}},\n  \"FaultDescription\": \"Тестовая неисправность\"\n}" }, "url": "{{baseUrl}}/api/orders" } },
+        { "name": "Change status", "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"StatusName\": \"В ремонте\",\n  \"Comment\": \"Проверка API\"\n}" }, "url": "{{baseUrl}}/api/orders/{{orderId}}/status" } },
+        { "name": "Mark payment twice (second: 409)", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/orders/{{orderId}}/payment" } },
+        { "name": "Archive order (204)", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/orders/{{orderId}}" } }
+      ]
+    },
+    {
+      "name": "Master access",
+      "item": [
+        { "name": "Assigned orders", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/master/orders" } },
+        { "name": "Assigned order diagnosis", "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"Diagnosis\": \"Проверка ограничения masterId\"\n}" }, "url": "{{baseUrl}}/api/master/orders/{{orderId}}/diagnosis" } },
+        { "name": "Unassigned order (403 or 404)", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/master/orders/999999" } }
+      ]
+    },
+    {
+      "name": "Directories and reports",
+      "item": [
+        { "name": "Clients", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/clients" } },
+        { "name": "Client not found (404)", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/clients/999999" } },
+        { "name": "Reports - sales", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/reports/sales?dateFrom=2026-01-01&dateTo=2026-12-31" } },
+        { "name": "Reports - workload", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/reports/workload?dateFrom=2026-01-01&dateTo=2026-12-31" } },
+        { "name": "Invalid report period (400)", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/reports/sales?dateFrom=2026-12-31&dateTo=2026-01-01" } },
+        { "name": "No token (401)", "request": { "method": "GET", "url": "{{baseUrl}}/api/reports/sales" } }
+      ]
+    }
+  ]
+}

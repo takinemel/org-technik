@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="API/API.csproj" Id="3079bc55-33dd-42ff-a7cf-8c5081640033" />
+  <Project Path="org_technika/org_technika.csproj" Id="ea1d0606-c046-447e-b039-ca1f54614038" />
+</Solution>
